@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { DynamicField } from "../components/ui/DynamicField";
 import {
   Zap,
   Trophy,
