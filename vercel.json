@@ -5,7 +5,7 @@
     },
     "api": {
       "root": "backend",
-      "entrypoint": "server.js"
+      "entrypoint": "index.ts"
     }
   },
   "rewrites": [
