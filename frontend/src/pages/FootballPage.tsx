@@ -264,25 +264,22 @@ export default function FootballPage() {
     setTactics(null);
 
     try {
-      const response = await fetch(
-        "http://localhost:5000/api/analyze-tactics",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            matchId: matchDetails.id,
-            homeTeam: matchDetails.homeTeam,
-            awayTeam: matchDetails.awayTeam,
-            formation: matchDetails.formation,
-            awayFormation: matchDetails.awayFormation,
-            minute: matchDetails.minute,
-            score: `${matchDetails.homeScore}-${matchDetails.awayScore}`,
-            prompt: coachPrompt,
-          }),
+      const response = await fetch("/api/analyze-tactics", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          matchId: matchDetails.id,
+          homeTeam: matchDetails.homeTeam,
+          awayTeam: matchDetails.awayTeam,
+          formation: matchDetails.formation,
+          awayFormation: matchDetails.awayFormation,
+          minute: matchDetails.minute,
+          score: `${matchDetails.homeScore}-${matchDetails.awayScore}`,
+          prompt: coachPrompt,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to fetch tactical analysis from server.");
