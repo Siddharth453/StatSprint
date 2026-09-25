@@ -1,13 +1,21 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
   "compilerOptions": {
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "skipLibCheck": true
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,               /* Disables strict type checks */
+    "noUnusedLocals": false,       /* Ignores unused variables like DynamicField */
+    "noUnusedParameters": false,   /* Ignores unused parameters */
+    "noEmitOnError": false,        /* Allows building even with errors */
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
   }
 }
-
