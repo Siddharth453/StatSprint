@@ -1,20 +1,26 @@
 {
-  "services": {
-    "web": {
-      "root": "frontend/"
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     },
-    "api": {
-      "root": "backend/"
+    {
+      "src": "api/index.ts",
+      "use": "@vercel/node"
     }
-  },
-  "rewrites": [
+  ],
+  "routes": [
     {
-      "source": "/api/:path*",
-      "destination": { "service": "api", "path": "/:path*" }
+      "src": "/api/(.*)",
+      "dest": "api/index.ts"
     },
     {
-      "source": "/(.*)",
-      "destination": { "service": "web", "path": "/$1" }
+      "src": "/(.*)",
+      "dest": "client/$1"
     }
   ]
 }
