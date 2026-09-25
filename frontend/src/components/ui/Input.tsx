@@ -1,5 +1,5 @@
 import React from "react";
-import { themes, defaultTheme, type ThemeName } from "../theme/theme";
+import { themes, defaultTheme, type ThemeName } from "../themes/theme";
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;

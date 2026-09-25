@@ -1,6 +1,6 @@
 import React from "react";
 import { Loader2 } from "lucide-react";
-import { themes, defaultTheme, type ThemeName } from "../theme/theme";
+import { themes, defaultTheme, type ThemeName } from "../themes/theme";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "danger" | "outline" | "ghost";
