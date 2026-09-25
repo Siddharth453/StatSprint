@@ -1,20 +1,21 @@
 {
   "services": {
     "web": {
-      "root": "frontend/"
+      "root": "frontend"
     },
     "api": {
-      "root": "backend/"
+      "root": "backend",
+      "entrypoint": "server.js"
     }
   },
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": { "service": "api", "path": "/:path*" }
+      "source": "/api/(.*)",
+      "destination": { "service": "api" }
     },
     {
       "source": "/(.*)",
-      "destination": { "service": "web", "path": "/$1" }
+      "destination": { "service": "web" }
     }
   ]
 }
